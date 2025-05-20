@@ -10,7 +10,7 @@ body {
   flex-direction: column;
   overflow: hidden;
   font-family: "Poppins", sans-serif;
-  background-color: #e9eef2;
+  background-color: #f0f0f0;
 }
 
 .page-container {
@@ -32,14 +32,12 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #ffffff;
+  background-color: #f0f0f0;
   padding: 1.5rem;
   height: 100%;
   position: relative;
   z-index: 5;
   overflow-y: auto;
-  border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
 }
 
 .header-container {
@@ -47,51 +45,6 @@ body {
   max-width: 32rem;
   margin-bottom: 1.5rem;
   text-align: center;
-}
-
-.logo-fixed {
-  position: fixed;
-  top: 32px;
-  left: 32px;
-  z-index: 1100;
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-}
-
-.logo-fixed .logo {
-  width: 90px;
-  height: 90px;
-  object-fit: contain;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.09);
-  border-radius: 16px;
-  background: #fff;
-  padding: 0.45rem;
-  margin: 0;
-}
-
-@media (max-width: 900px) {
-  .logo-fixed {
-    top: 12px;
-    left: 12px;
-  }
-  .logo-fixed .logo {
-    width: 60px;
-    height: 60px;
-    padding: 0.2rem;
-  }
-}
-
-@media (max-width: 600px) {
-  .logo-fixed {
-    top: 6px;
-    left: 6px;
-  }
-  .logo-fixed .logo {
-    width: 40px;
-    height: 40px;
-    padding: 0.1rem;
-  }
 }
 
 .logo-container {
@@ -116,7 +69,7 @@ body {
 .logo {
   width: 70px;
   height: 70px;
-  margin-right: 0;
+  margin-right: 0; /* Quito el margen derecho para que esté centrado */
   overflow: hidden;
 }
 
@@ -133,14 +86,14 @@ body {
 .title {
   font-size: 2.5rem;
   font-weight: bold;
-  color: #3d7c10;
+  color: #4a8c1c;
   letter-spacing: 0.5px;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .subtitle {
   font-size: 1.2rem;
-  color: #555;
+  color: #666;
   margin-bottom: 1rem;
   line-height: 1.4;
 }
@@ -166,7 +119,6 @@ body {
   transform: translateY(-50%);
   z-index: 10;
   font-size: 1.2rem;
-  color: #5cb85c;
 }
 
 .form-input.with-icon {
@@ -181,7 +133,7 @@ body {
   background: none;
   border: none;
   cursor: pointer;
-  color: #5cb85c;
+  color: #8bc34a;
   font-size: 1.2rem;
   padding: 5px;
   display: flex;
@@ -191,44 +143,44 @@ body {
 }
 
 .toggle-password:hover {
-  color: #3d7c10;
+  color: #4a8c1c;
 }
 
 .form-input {
   width: 100%;
   padding: 0.8rem;
   padding-right: 2.5rem;
-  border: 1px solid #ced4da;
-  border-radius: 8px;
+  border: 1px solid #8bc34a;
+  border-radius: 0.5rem;
   outline: none;
   font-size: 1rem;
   transition: all 0.3s ease;
 }
 
 .form-input:focus {
-  border-color: #5cb85c;
-  box-shadow: 0 0 0 0.2rem rgba(92, 184, 92, 0.25);
+  border-color: #4a8c1c;
+  box-shadow: 0 0 0 2px rgba(74, 140, 28, 0.2);
 }
 
 .forgot-password {
   text-align: center;
   margin-bottom: 1.5rem;
-  color: #5cb85c;
+  color: #4a8c1c;
   font-size: 0.95rem;
   cursor: pointer;
   transition: color 0.3s ease;
 }
 
 .forgot-password:hover {
-  color: #3d7c10;
+  color: #3a6b15;
   text-decoration: underline;
 }
 
 .btn {
   width: 100%;
-  padding: 0.9rem;
-  border-radius: 8px;
-  font-weight: 700;
+  padding: 0.8rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
   text-align: center;
   cursor: pointer;
   margin-bottom: 1rem;
@@ -236,33 +188,31 @@ body {
   outline: none;
   transition: all 0.3s ease;
   font-size: 1.1rem;
-  letter-spacing: 0.8px;
-  text-transform: uppercase;
+  letter-spacing: 0.5px;
   display: block;
 }
 
 .btn-primary {
-  background-color: #5cb85c;
+  background-color: #8bc34a;
   color: white;
 }
 
 .btn-primary:hover {
-  background-color: #4a934a;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  background-color: #7cb342;
   transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .btn-secondary {
-  background-color: transparent;
-  color: #5cb85c;
-  border: 2px solid #5cb85c;
+  background-color: white;
+  color: #4a8c1c;
+  border: 1px solid #8bc34a;
 }
 
 .btn-secondary:hover {
-  background-color: #5cb85c;
-  color: white;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  background-color: #f5f9f0;
   transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
 }
 
 .image-panel {

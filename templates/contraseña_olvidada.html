@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Recuperar Contraseña</title>
-  <link rel="icon" type="image/x-icon" href="/static/img/favicon.webp">
-  <link rel="stylesheet" href="/static/css/fonts.css">
-  <link rel="stylesheet" href="/static/css/styles.css">
+  <link rel="icon" type="image/x-icon" href="/static/img/logotec.ico">
+  <link rel="stylesheet" href="/static/css/modern_login.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta name="description" content="Recuperación de contraseña - Escuela de Educación Técnica N°3139">
 </head>
 <body>
   <div class="page-container">
@@ -24,7 +24,7 @@
         </div>
 
         <p class="subtitle">
-          Ingrese su correo o usuario para recibir instrucciones de recuperación
+          Ingrese su DNI y correo para recibir instrucciones de recuperación
         </p>
       </div>
 
@@ -32,14 +32,21 @@
         <form>
           <div class="form-group">
             <span class="input-icon">
-              <i class="fa-solid fa-envelope" style="color: #8bc34a;"></i>
+              <i class="fa-solid fa-id-card" style="color: #88B257;"></i>
             </span>
-            <input type="text" id="email" class="form-input with-icon" placeholder="Ingrese su correo o usuario">
+            <input type="text" id="dni" class="form-input with-icon" placeholder="Ingrese su DNI" required>
+          </div>
+
+          <div class="form-group">
+            <span class="input-icon">
+              <i class="fa-solid fa-envelope" style="color: #88B257;"></i>
+            </span>
+            <input type="email" id="email" class="form-input with-icon" placeholder="Ingrese su correo electrónico" required>
           </div>
 
           <button type="button" class="btn btn-primary">Enviar instrucciones</button>
 
-          <div class="back-to-login">
+          <div class="forgot-password back-to-login">
             <a href="/templates/pagina_principal.html">Volver a inicio de sesión</a>
           </div>
         </form>
@@ -61,12 +68,30 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', function() {
+      const dniInput = document.getElementById('dni');
       const emailInput = document.getElementById('email');
       const submitButton = document.querySelector('.btn-primary');
       
       submitButton.addEventListener('click', function() {
+        // Validar DNI
+        if (dniInput.value.trim() === '') {
+          alert('Por favor, ingrese su DNI');
+          dniInput.focus();
+          return;
+        }
+        
+        // Validar email
         if (emailInput.value.trim() === '') {
-          alert('Por favor, ingrese su correo o usuario');
+          alert('Por favor, ingrese su correo electrónico');
+          emailInput.focus();
+          return;
+        }
+        
+        // Validar formato de email
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(emailInput.value.trim())) {
+          alert('Por favor, ingrese un correo electrónico válido');
+          emailInput.focus();
           return;
         }
         

@@ -44,7 +44,7 @@ body {
 .logo-title {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 1rem;
 }
 
 .school-logo {
@@ -63,15 +63,6 @@ body {
 .logo {
   font-size: 1.5rem;
   font-weight: bold;
-  height: 220px;
-  width: 220px;
-}
-
-@media (max-width: 700px) {
-  .logo {
-    height: 120px;
-    width: 120px;
-  }
 }
 
 .menu-button {
