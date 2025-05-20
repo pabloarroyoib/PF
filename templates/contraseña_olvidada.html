@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Recuperar Contraseña</title>
   <link rel="icon" type="image/x-icon" href="/static/img/logotec.ico">
-  <link rel="stylesheet" href="/static/css/modern_login.css">
+  <link rel="stylesheet" href="/static/css/login.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <meta name="description" content="Recuperación de contraseña - Escuela de Educación Técnica N°3139">
 </head>
@@ -66,39 +66,6 @@
     </div>
   </div>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const dniInput = document.getElementById('dni');
-      const emailInput = document.getElementById('email');
-      const submitButton = document.querySelector('.btn-primary');
-      
-      submitButton.addEventListener('click', function() {
-        // Validar DNI
-        if (dniInput.value.trim() === '') {
-          alert('Por favor, ingrese su DNI');
-          dniInput.focus();
-          return;
-        }
-        
-        // Validar email
-        if (emailInput.value.trim() === '') {
-          alert('Por favor, ingrese su correo electrónico');
-          emailInput.focus();
-          return;
-        }
-        
-        // Validar formato de email
-        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailPattern.test(emailInput.value.trim())) {
-          alert('Por favor, ingrese un correo electrónico válido');
-          emailInput.focus();
-          return;
-        }
-        
-        // Aquí iría la lógica para enviar el correo de recuperación
-        alert('Se han enviado las instrucciones de recuperación a su correo');
-      });
-    });
-  </script>
+  <script src="/static/js/validation.js"></script>
 </body>
 </html>
