@@ -26,8 +26,9 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary-color) 100%);
-  background-size: cover;
+  background: linear-gradient(120deg, rgba(140, 190, 90, 0.8) 0%, rgba(110, 165, 60, 0.9) 50%, rgba(90, 145, 40, 0.95) 100%), 
+              radial-gradient(circle at bottom left, rgba(76, 175, 80, 0.4) 0%, rgba(56, 142, 60, 0) 70%);
+  background-size: 200% 200%, 100% 100%;
   background-attachment: fixed;
   min-height: 100vh;
   display: flex;
@@ -35,6 +36,13 @@ body {
   align-items: center;
   padding: 2rem;
   color: var(--text-color);
+  animation: gradientShift 15s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%, 0% 0%; }
+  50% { background-position: 100% 50%, 0% 0%; }
+  100% { background-position: 0% 50%, 0% 0%; }
 }
 
 .container {
