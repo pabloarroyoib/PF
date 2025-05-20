@@ -21,58 +21,44 @@
       </div>
 
       <div class="form-container">
-        <form method="POST" action="{{ url_for('registro_institucion') }}"> 
+        <form>
           <div class="form-group">
-            <span class="input-icon">
-              <i class="fa-solid fa-id-card"></i>
-            </span>
-            <input type="text" name="dni" class="form-input with-icon" placeholder="Ingrese su DNI" required>
+            
+            <input type="text" name="dni" class="form-input" placeholder="Ingrese su DNI" required>
           </div>
 
           <div class="form-group">
-            <span class="input-icon">
-              <i class="fa-solid fa-user"></i>
-            </span>
-            <input type="text" name="nombre" class="form-input with-icon" placeholder="Ingrese su nombre" required>
+            
+            <input type="text" name="nombre" class="form-input" placeholder="Ingrese su nombre" required>
           </div>
 
           <div class="form-group">
-            <span class="input-icon">
-              <i class="fa-solid fa-user"></i>
-            </span>
-            <input type="text" name="apellido" class="form-input with-icon" placeholder="Ingrese su apellido" required>
+            
+            <input type="text" name="apellido" class="form-input" placeholder="Ingrese su apellido" required>
           </div>
 
           <div class="form-group">
-            <span class="input-icon">
-              <i class="fa-solid fa-envelope"></i>
-            </span>
-            <input type="email" name="email" class="form-input with-icon" placeholder="Ingrese su e-mail" required>
+            
+            <input type="email" name="email" class="form-input" placeholder="Ingrese su e-mail" required>
           </div>
 
           <div class="form-group">
-            <span class="input-icon">
-              <i class="fa-solid fa-phone"></i>
-            </span>
-            <input type="tel" name="telefono" class="form-input with-icon" placeholder="Ingrese su teléfono" required>
+            
+            <input type="tel" name="telefono" class="form-input" placeholder="Ingrese su teléfono" required>
           </div>
 
           <div class="form-group password-container">
-            <span class="input-icon">
-              <i class="fa-solid fa-lock"></i>
-            </span>
-            <input type="password" id="password" name="password" class="form-input with-icon" placeholder="Ingrese su contraseña" required>
-            <button type="button" class="toggle-password" onclick="togglePassword('password', this)">
+            <!-- Esta parte ban los botones -->
+            <input type="password" name="password" class="form-input" placeholder="Ingrese su contraseña" required>
+            <button type="button" class="toggle-password">
               <i class="fa-solid fa-eye"></i>
             </button>
           </div>
 
           <div class="form-group password-container">
-            <span class="input-icon">
-              <i class="fa-solid fa-lock"></i>
-            </span>
-            <input type="password" id="verify_password" name="verify_password" class="form-input with-icon" placeholder="Verifique su contraseña" required>
-            <button type="button" class="toggle-password" onclick="togglePassword('verify_password', this)">
+            
+            <input type="password" name="verify_password" class="form-input" placeholder="Verifique su contraseña" required>
+            <button type="button" class="toggle-password">
               <i class="fa-solid fa-eye"></i>
             </button>
           </div>
@@ -90,27 +76,21 @@
   </div>
 
   <script>
-    function togglePassword(fieldId, button) {
-      const input = document.getElementById(fieldId);
-      const icon = button.querySelector('i');
-      if (input.type === 'password') {
-        input.type = 'text';
-        icon.classList.remove('fa-eye');
-        icon.classList.add('fa-eye-slash');
-      } else {
-        input.type = 'password';
-        icon.classList.remove('fa-eye-slash');
-        icon.classList.add('fa-eye');
-      }
-    }
-
-    // Attach event listeners if not already done by inline onclick
-    // document.querySelectorAll('.toggle-password').forEach(button => {
-    //   button.addEventListener('click', function() {
-    //     const inputId = this.previousElementSibling.id; // Or however you associate them
-    //     togglePassword(inputId, this);
-    //   });
-    // });
+    // Manejo de visibilidad de contraseñas
+    document.querySelectorAll('.toggle-password').forEach(button => {
+      button.addEventListener('click', function() {
+        const input = this.previousElementSibling;
+        const icon = this.querySelector('i');
+        
+        if (input.type === 'password') {
+          input.type = 'text';
+          icon.classList.replace('fa-eye', 'fa-eye-slash');
+        } else {
+          input.type = 'password';
+          icon.classList.replace('fa-eye-slash', 'fa-eye');
+        }
+      });
+    });
   </script>
 </body>
 </html>
